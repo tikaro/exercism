@@ -1,0 +1,11 @@
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/xunit.runner.utility.netstandard15.dll
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/xunit.runner.reporters.netstandard15.dll
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/HelloWorld.deps.json
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/HelloWorld.runtimeconfig.json
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/HelloWorld.runtimeconfig.dev.json
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/HelloWorld.dll
+/Users/john/exercism/csharp/hello-world/bin/Debug/netcoreapp1.0/HelloWorld.pdb
+/Users/john/exercism/csharp/hello-world/obj/Debug/netcoreapp1.0/HelloWorld.AssemblyInfo.cs
+/Users/john/exercism/csharp/hello-world/obj/Debug/netcoreapp1.0/HelloWorld.dll
+/Users/john/exercism/csharp/hello-world/obj/Debug/netcoreapp1.0/HelloWorld.pdb
