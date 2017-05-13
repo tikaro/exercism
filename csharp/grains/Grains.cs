@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 public static class Grains
 {
@@ -15,12 +16,8 @@ public static class Grains
     public static ulong Total()
     {
         ulong totalGrains = 0;
-
-        for (int i=1; i<65; i++)
-        {
-            totalGrains += Square(i);
-        }
-
+        ulong finalSquare = Convert.ToUInt64(Math.Pow(2, 63));
+        totalGrains = finalSquare + (finalSquare - 1);
         return totalGrains;
     }
 }
