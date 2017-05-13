@@ -4,11 +4,23 @@ public static class Grains
 {
     public static ulong Square(int n)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        // For a square numbered n,
+        // return 2 to the (n-1)th power:
+        // 2^0 is 1
+        // 2^1 is 2
+        // 2^2 is 4 etc.
+        return Convert.ToUInt64(Math.Pow(2, n-1));
     }
 
     public static ulong Total()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        ulong totalGrains = 0;
+
+        for (int i=1; i<65; i++)
+        {
+            totalGrains += Square(i);
+        }
+
+        return totalGrains;
     }
 }
