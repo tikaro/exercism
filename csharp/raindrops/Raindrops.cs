@@ -4,6 +4,20 @@ public static class Raindrops
 {
     public static string Convert(int number)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        string speak = "";
+
+        if (number % 3 == 0) {
+            speak += "Pling";
+        }
+        if (number % 5 == 0) {
+            speak += "Plang";
+        }
+        if (number % 7 == 0) {
+            speak += "Plong";
+        }
+        if (speak == "") {
+            return number.ToString();
+        }
+        return speak;
     }
 }
