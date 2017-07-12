@@ -1,54 +1,48 @@
-/*
-   - Earth: orbital period 365.25 Earth days, or 31557600 seconds
-   - Mercury: orbital period 0.2408467 Earth years
-   - Venus: orbital period 0.61519726 Earth years
-   - Mars: orbital period 1.8808158 Earth years
-   - Jupiter: orbital period 11.862615 Earth years
-   - Saturn: orbital period 29.447498 Earth years
-   - Uranus: orbital period 84.016846 Earth years
-   - Neptune: orbital period 164.79132 Earth years
-*/
-const earthyearinseconds = 31557600
+const earthyear = 31557600
 export default class SpaceAge {
     seconds: number
     constructor(seconds: number) {
         this.seconds = seconds
     }
-    roundedAge(ageinseconds: number): number {
-        return Math.round(ageinseconds * 100)/100
-    }
-    planetAge(ageinseconds: number, yearinseconds: number) {
-        return ageinseconds / yearinseconds
+    planetAge(ageinseconds: number, yearinseconds: number): number {
+        return (Math.round((ageinseconds / yearinseconds) * 100)/100)
     }
     onMercury(): number {
         // Mercury: orbital period 0.2408467 Earth years
-        var mercuryyearinseconds: number = (earthyearinseconds * 0.2408467)
-        var mercuryage: number = this.planetAge(this.seconds, mercuryyearinseconds)
-        return this.roundedAge(mercuryage)
+        var mercuryyear: number = (earthyear * 0.2408467)
+        return this.planetAge(this.seconds, mercuryyear)
     }
     onVenus(): number {
         // Venus: orbital period 0.61519726 Earth years
-        var venusyearinseconds: number = (earthyearinseconds * 0.61519726)
-        var venusage: number = this.planetAge(this.seconds, venusyearinseconds)
-        return this.roundedAge(venusage)
+        var venusyear: number = (earthyear * 0.61519726)
+        return this.planetAge(this.seconds, venusyear)
     }
     onEarth(): number {
-        var earthage: number = this.planetAge(this.seconds, earthyearinseconds)
-        return this.roundedAge(earthage)
+        return this.planetAge(this.seconds, earthyear)
     }
     onMars(): number {
-        return 0
+        // Mars: orbital period 1.8808158 Earth years
+        var marsyear: number = (earthyear * 1.8808158)
+        return this.planetAge(this.seconds, marsyear)
     }
     onJupiter(): number {
-        return 0
+        // Jupiter: orbital period 11.862615 Earth years
+        var jupiteryear: number = (earthyear * 11.8626158)
+        return this.planetAge(this.seconds, jupiteryear)
     }
     onSaturn(): number {
-        return 0
+        // Saturn: orbital period 29.447498 Earth years
+        var saturnyear: number = (earthyear * 29.447498)
+        return this.planetAge(this.seconds, saturnyear)
     }
     onUranus(): number {
-        return 0
+        // Uranus: orbital period 84.016846 Earth years
+        var uranusyear: number = (earthyear * 84.016846)
+        return this.planetAge(this.seconds, uranusyear)
     }
     onNeptune(): number {
-        return 0
+        // Neptune: orbital period 164.79132 Earth years
+        var neptuneyear: number = (earthyear * 164.79132)
+        return this.planetAge(this.seconds, neptuneyear)
     }
 }
