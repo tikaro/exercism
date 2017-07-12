@@ -7,18 +7,18 @@ describe('Space Age', () => {
     expect(age.seconds).toEqual(1000000)
   })
 
-  xit('age in earth years', () => {
+  it('age in earth years', () => {
     const age = new SpaceAge(1000000000)
     expect(age.onEarth()).toEqual(31.69)
   })
 
-  xit('age in mercury years', () => {
+  it('age in mercury years', () => {
     const age = new SpaceAge(2134835688)
     expect(age.onEarth()).toEqual(67.65)
     expect(age.onMercury()).toEqual(280.88)
   })
 
-  xit('age in venus years', () => {
+  it('age in venus years', () => {
     const age = new SpaceAge(189839836)
     expect(age.onEarth()).toEqual(6.02)
     expect(age.onVenus()).toEqual(9.78)
