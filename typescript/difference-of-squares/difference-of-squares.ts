@@ -12,15 +12,17 @@ export default class Squares {
     }
 
     private _squareOfSums(upto: number): number {
+        // the numbers are consecutive starting from 1,
+        // so I can do this without a loop.
         var sum: number = (upto * ( upto +1 ))/2
-        var squareofsums: number = sum*sum
+        var squareofsums: number = sum * sum //could also be sum ** 2
         return squareofsums
     }
 
     private _sumOfSquares(upto: number): number {
         var sumofsquares: number = 0
         for (var index = 1; index <= upto; index++) {
-            sumofsquares += (index * index)
+            sumofsquares += (index * index) //could also be index ** 2
         }
         return sumofsquares
     }
