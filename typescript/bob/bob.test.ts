@@ -9,32 +9,32 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.')
   })
 
-  xit('shouting', () => {
+  it('shouting', () => {
     const result = bob.hey('WATCH OUT!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('asking a question', () => {
+  it('asking a question', () => {
     const result = bob.hey('Does this cryogenic chamber make me look fat?')
     expect(result).toEqual('Sure.')
   })
 
-  xit('talking forcefully', () => {
+  it('talking forcefully', () => {
     const result = bob.hey("Let's go make out behind the gym!")
     expect(result).toEqual('Whatever.')
   })
 
-  xit('using acronyms in regular speech', () => {
+  it('using acronyms in regular speech', () => {
     const result = bob.hey("It's OK if you don't want to go to the DMV.")
     expect(result).toEqual('Whatever.')
   })
 
-  xit('forceful questions', () => {
+  it('forceful questions', () => {
     const result = bob.hey('WHAT THE HELL WERE YOU THINKING?')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('shouting numbers', () => {
+  it('shouting numbers', () => {
     const result = bob.hey('1, 2, 3 GO!')
     expect(result).toEqual('Whoa, chill out!')
   })
@@ -49,27 +49,27 @@ describe('Bob', () => {
     expect(result).toEqual('Sure.')
   })
 
-  xit('shouting with special characters', () => {
+  it('shouting with special characters', () => {
     const result = bob.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('shouting with umlauts', () => {
+  it('shouting with umlauts', () => {
     const result = bob.hey('\xdcML\xc4\xdcTS!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('calmly speaking about umlauts', () => {
+  it('calmly speaking about umlauts', () => {
     const result = bob.hey('\xfcML\xe4\xdcTS')
     expect(result).toEqual('Whatever.')
   })
 
-  xit('shouting with no exclamation mark', () => {
+  it('shouting with no exclamation mark', () => {
     const result = bob.hey('I HATE YOU')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('statement containing question mark', () => {
+  it('statement containing question mark', () => {
     const result = bob.hey('Ending with a ? means a question.')
     expect(result).toEqual('Whatever.')
   })
