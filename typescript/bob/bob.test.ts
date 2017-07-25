@@ -39,12 +39,12 @@ describe('Bob', () => {
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('only numbers', () => {
+  it('only numbers', () => {
     const result = bob.hey('1, 2, 3')
     expect(result).toEqual('Whatever.')
   })
 
-  xit('question with only numbers', () => {
+  it('question with only numbers', () => {
     const result = bob.hey('4?')
     expect(result).toEqual('Sure.')
   })
@@ -74,17 +74,17 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.')
   })
 
-  xit('prattling on', () => {
+  it('prattling on', () => {
     const result = bob.hey('Wait! Hang on.  Are you going to be OK?')
     expect(result).toEqual('Sure.')
   })
 
-  xit('silence', () => {
+  it('silence', () => {
     const result = bob.hey('')
     expect(result).toEqual('Fine. Be that way!')
   })
 
-  xit('prolonged silence', () => {
+  it('prolonged silence', () => {
     const result = bob.hey('   ')
     expect(result).toEqual('Fine. Be that way!')
   })
