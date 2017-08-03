@@ -1,22 +1,25 @@
-class PhoneNumber {
+class Phone {
   private value: string
 
-  constructor (input: string) {
-    let cleanedUp = input.replace(/(\)|\(|\s|\.|-)/g, "")
-    if (cleanedUp.length === 11 && cleanedUp[0] === "1") {
-        cleanedUp = cleanedUp.slice(1, 11)
+  constructor(input: string) {
+    let cleanedInput = input.replace(/[()-.]/g, '') // [()-.] matches parentheses, dots, and dashes
+                              .replace(/\s/g, '')   // \s matches whitespace
+    if (cleanedInput.length === 11 && cleanedInput.substr(0, 1) === '1') {
+      cleanedInput = cleanedInput.substr(1, 10)
     }
-    this.value = cleanedUp
+    this.value = cleanedInput
   }
 
   number() {
-    if (this.value.length < 10 || this.value.length > 10) {return undefined}
-
-    for (const each of this.value) {
-      const result = parseInt(each, 10)
-      if ( isNaN(result) ) {return undefined}
+    if (this.value.length < 10 || this.value.length > 10) {
+      return undefined
+    }
+    for (const char of this.value) {
+      const result = parseInt(char, 10)
+      if (isNaN(result)) { return undefined }
     }
     return this.value
   }
 }
-export default PhoneNumber
+
+export default Phone
