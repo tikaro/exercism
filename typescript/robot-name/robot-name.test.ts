@@ -11,7 +11,7 @@ describe('Robot', () => {
     expect(robot.name).toMatch(/^[A-Z]{2}\d{3}$/)
   })
 
-  xit('name is the same each time', () => {
+  it('name is the same each time', () => {
     expect(robot.name).toEqual(robot.name)
   })
 

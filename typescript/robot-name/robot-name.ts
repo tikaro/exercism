@@ -1,20 +1,22 @@
 class RobotName {
-  private _name: string
+  name: string
 
   constructor() {
-    this._name = this.generateName()
-  }
-
-  name() {
-    return this._name
+    this.name = this.generateName()
   }
 
   resetName() {
-    this._name = this.generateName()
+    this.name = this.generateName()
   }
 
   private generateName() {
-    return "AB123"
+    let prefix = "RB"
+
+    let d = new Date
+    let m = d.getMilliseconds().toString()
+    let suffix = m.substring(m.length, -3)
+
+    return prefix + suffix
   }
 }
 
