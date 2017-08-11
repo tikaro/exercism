@@ -1,22 +1,26 @@
 class RobotName {
-  name: string
+  private _name: string
+  //private usedNames = new Set<string>()
+
+  get name () {
+    return this._name
+  }
 
   constructor() {
-    this.name = this.generateName()
+    this.resetName()
   }
 
   resetName() {
-    this.name = this.generateName()
+    this._name = this.generateName()
   }
 
   private generateName() {
-    let prefix = "RB"
-
-    let d = new Date
-    let m = d.getMilliseconds().toString()
-    let suffix = m.substring(m.length, -3)
-
-    return prefix + suffix
+    const prefix: string = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 2).toUpperCase()
+    let suffix: string = Math.round(Math.random() * 1000).toString(10)
+    suffix = "000".substring(0, 3 - suffix.length) + suffix // convert '7' to '007'
+    const generatedName = prefix + suffix
+    // console.log('generatedName is ' + generatedName)
+    return generatedName
   }
 }
 
