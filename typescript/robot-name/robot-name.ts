@@ -1,6 +1,6 @@
 class RobotName {
   private _name: string
-  //private usedNames = new Set<string>()
+  private usedNames = new Set<string>()
 
   get name () {
     return this._name
@@ -12,6 +12,10 @@ class RobotName {
 
   resetName() {
     this._name = this.generateName()
+    while (this.usedNames.has(this._name)) {
+      this._name = this.generateName()
+    }
+    this.usedNames.add(this._name)
   }
 
   private generateName() {
