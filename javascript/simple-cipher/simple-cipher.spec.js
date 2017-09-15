@@ -48,19 +48,19 @@ describe('Substitution cipher', function () {
   var key = 'abcdefghij';
   var cipher = new Cipher(key);
 
-  xit('keeps the submitted key', function () {
+  it('keeps the submitted key', function () {
     expect(cipher.key).toEqual(key);
   });
 
-  xit('can encode', function () {
+  it('can encode', function () {
     expect(cipher.encode('aaaaaaaaaa')).toEqual('abcdefghij');
   });
 
-  xit('can decode', function () {
+  it('can decode', function () {
     expect(cipher.decode('abcdefghij')).toEqual('aaaaaaaaaa');
   });
 
-  xit('is reversible', function () {
+  it('is reversible', function () {
     expect(cipher.decode(cipher.encode('abcdefghij'))).toEqual('abcdefghij');
   });
 
