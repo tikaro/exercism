@@ -31,7 +31,7 @@ Cipher.prototype.encryptChar = function(inputChar, keyChar) {
   var keyCode = keyChar.charCodeAt(0) - 97;
   var shiftChar = inputCharCode + keyCode;
 
-  // handle characters greater than Z
+  // handle characters greater than 'z'
   if (shiftChar > 25) ( shiftChar = shiftChar - 26);
 
   var outputChar = String.fromCharCode(97 + shiftChar);
@@ -44,7 +44,7 @@ Cipher.prototype.decryptChar = function(inputChar, keyChar) {
   var keyCode = keyChar.charCodeAt(0) - 97;
   var shiftChar = inputCharCode - keyCode;
 
-  // handle characters greater than Z
+  // handle characters less than 'a'
   if (shiftChar < 0) ( shiftChar = shiftChar + 26);
 
   var outputChar = String.fromCharCode(97 + shiftChar);
