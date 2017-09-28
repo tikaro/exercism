@@ -8,7 +8,6 @@ var Cipher = function(input = 'aaaaaaaaaa') {
 };
 
 Cipher.prototype.encode = function(input) {
-  var plaintext = input;
   var ciphertext = '';
   for(var i=0; i< input.length; i++) {
     ciphertext += this.encryptChar(input[i],this.key[i % (this.key.length)]);
@@ -18,7 +17,6 @@ Cipher.prototype.encode = function(input) {
 }
 
 Cipher.prototype.decode = function(input) {
-  var ciphertext = input;
   var plaintext = '';
   for(var i=0; i< input.length; i++) {
     plaintext += this.decryptChar(input[i],this.key[i % (this.key.length)]);
