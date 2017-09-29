@@ -1,0 +1,11 @@
+{
+  "name": "bob",
+  "version": "1.0.0",
+  "description": "bob javascript exercise",
+  "main": "bob.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jasmine spec ./*.spec.js",
+    "lint": "eslint \"*.js\""
+  }
+}
