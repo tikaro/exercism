@@ -1,12 +1,19 @@
 'use strict'
 
 var Pangram = function(input) {
-  this.input = input;
+  this.input = input.toLowerCase();
 }
 
 Pangram.prototype.isPangram = function() {
-  if( this.input.length == 0 ) { return false; }
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
+  for( var i = 0; i <= alphabet.length; i++ ) {
+    if( this.input.match( alphabet[i] ) ) {
+      // keep testing
+    } else {
+      return false;
+    }
+  }
   return true;
 }
 

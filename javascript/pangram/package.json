@@ -1,7 +1,7 @@
 {
   "name": "pangram",
   "version": "1.0.0",
-  "description": "pangram exercise in javascript for exercism",
+  "description": "Pangram exercise in javascript for exercism",
   "main": "pangram.js",
   "author": "John Young",
   "license": "MIT",
