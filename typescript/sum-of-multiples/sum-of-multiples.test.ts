@@ -1,4 +1,4 @@
-import SumOfMultiples from './sum-of-multiples'
+import SumOfMultiples from './sum-of-multiples-bravo'
 
 describe('SumOfMultiples', () => {
   it('to 1', () => {
