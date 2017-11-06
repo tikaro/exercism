@@ -1,4 +1,4 @@
-import SumOfMultiples from './sum-of-multiples-delta'
+import SumOfMultiples from './sum-of-multiples-echo'
 
 describe('SumOfMultiples', () => {
   it('to 1', () => {
