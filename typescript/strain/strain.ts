@@ -1,13 +1,23 @@
-export function keep(numbers: number[]) {
-    numbers.forEach((n: number) => {
-        n = n + 1
-    })
-    return [1, 2, 3]
-}
+interface Predicate<T> {
+    (element: T): boolean
+  }
 
-export function discard(numbers: any[]) {
-    numbers.forEach((n: number) => {
-        n = n - 1
+  export function keep<T>(array: T[], predicate: Predicate<T>): T[] {
+    const output: T[] = []
+    array.forEach((el: T) => {
+      if (predicate(el)) {
+        output.push(el)
+      }
     })
-    return [1, 2, 3]
-}
+    return output
+  }
+
+  export function discard<T>(array: T[], predicate: Predicate<T>): T[] {
+    const output: T[] = []
+    array.forEach((el: T) => {
+      if (!predicate(el)) {
+        output.push(el)
+      }
+    })
+    return output
+  }
