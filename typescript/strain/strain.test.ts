@@ -1,4 +1,4 @@
-import {keep, discard} from './strain'
+import {keep, discard} from './strain_bravo'
 
 describe('strain', () => {
   it('keeps on empty array returns empty array', () => {
