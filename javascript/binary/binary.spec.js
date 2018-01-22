@@ -37,7 +37,7 @@ describe('binary', function () {
     expect(new Binary('00011111').toDecimal()).toEqual(31);
   });
 
-  xit('invalid inputs are decimal 0', function () {
+  it('invalid inputs are decimal 0', function () {
     expect(new Binary('carrot').toDecimal()).toEqual(0);
     expect(new Binary('012').toDecimal()).toEqual(0);
     expect(new Binary('10nope').toDecimal()).toEqual(0);
