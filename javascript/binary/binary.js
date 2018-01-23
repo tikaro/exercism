@@ -1,6 +1,6 @@
 'use strict';
 
-const DEBUG = true;
+const DEBUG = false;
 
 var Binary = function(input) {
   this.input = input;
