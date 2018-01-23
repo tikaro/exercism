@@ -1,6 +1,6 @@
 'use strict';
 
-const DEBUG = false;
+const DEBUG = true;
 
 var Binary = function(input) {
   this.input = input;
@@ -11,8 +11,8 @@ Binary.prototype.toDecimal = function() {
    return 0;
  }
   
-  var inputArray = this.input.split('').reverse();
-  var decimalValue = 0;
+  var inputArray  = this.input.split('').reverse();
+  var outputArray = [];
 
   DEBUG && console.log(`++++++++++++++++ ${this.input} +++++++++++++++++`)
 
@@ -23,14 +23,15 @@ Binary.prototype.toDecimal = function() {
     var binaryPlaceValue = 2**(i);
     DEBUG && console.log(`binaryPlaceValue is ${binaryPlaceValue}`);
 
-    var valueToAdd = currentBinaryValue * binaryPlaceValue;
-    DEBUG && console.log(`valueToAdd is ${valueToAdd}`);
-
-    decimalValue += valueToAdd;
-    DEBUG && console.log(`decimalValue is now ${decimalValue}`);
+    outputArray.push(currentBinaryValue * binaryPlaceValue);
+    DEBUG && console.log(`pushing ${currentBinaryValue * binaryPlaceValue} to outputArray`);
   }
 
-  return decimalValue;
+  var decimalResult = outputArray.reduce(function(previous, current) {
+    return previous + current;
+  });
+
+  return decimalResult;
 }
 
 module.exports = Binary;
