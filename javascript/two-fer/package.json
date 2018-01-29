@@ -1,0 +1,6 @@
+{
+  "name": "two-fer",
+  "jest": {
+    "verbose": false
+  }
+}

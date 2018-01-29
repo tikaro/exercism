@@ -13,6 +13,6 @@ describe('Two Fer', function () {
   });
 
   it('gives one to Bob if \'Bob\' is given', function () {
-    expect(twoFer.twoFer('Bob')).toEqual('One for Bob, one for me.');
+    expect(twoFer.twoFer('Bob')).toEqual('One for Bob, one for me.')
   });
 });
