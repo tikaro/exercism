@@ -1,0 +1,10 @@
+{
+  "name": "binary",
+  "version": "0.0.1",
+  "main": "binary.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}
