@@ -10,5 +10,10 @@
   "scripts": {
     "lint": "eslint './**/*.js'",
     "test": "jest"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2016
+    }
   }
 }

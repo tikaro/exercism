@@ -29,18 +29,20 @@ describe('binary', function () {
     expect(new Binary('11010').toDecimal()).toEqual(26);
   })
 
-  it.only('given 10001101000, returns decimal 1128', function() {
+  it('given 10001101000, returns decimal 1128', function() {
     expect(new Binary('10001101000').toDecimal()).toEqual(1128);
   })
 
-  /*
-  * 00011111 is decimal 31
-  * invalid inputs are decimal 0
-  *   carrot
-  *   012
-  *   10nope
-  *   nope10
-  *   10nope10
-  */
+  it('given 00011111, returns decimal 31', function() {
+    expect(new Binary('00011111').toDecimal()).toEqual(31);
+  })
+
+  it('given invalid inputs, returns decimal 0', function () {
+    expect(new Binary('carrot').toDecimal()).toEqual(0);
+    expect(new Binary('012').toDecimal()).toEqual(0);
+    expect(new Binary('10nope').toDecimal()).toEqual(0);
+    expect(new Binary('nope10').toDecimal()).toEqual(0);
+    expect(new Binary('10nope10').toDecimal()).toEqual(0);
+  })
 
 })
