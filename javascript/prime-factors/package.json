@@ -1,0 +1,15 @@
+{
+  "name": "prime-factors",
+  "version": "1.0.0",
+  "description": "The 'prime-factors' exercise",
+  "main": "prime-factors.js",
+  "author": "John Young",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "jest": "^22.2.2"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
