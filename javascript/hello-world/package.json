@@ -1,0 +1,16 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Exercism 'hello world' exercise",
+  "main": "hello-world.js",
+  "author": "John Young",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "lint": "eslint './**/*.js'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^22.2.2"
+  }
+}
