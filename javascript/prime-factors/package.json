@@ -11,5 +11,11 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2016,
+      "maxStatements": false
+    }
   }
 }
