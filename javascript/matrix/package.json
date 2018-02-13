@@ -1,0 +1,21 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "'matrix' Exercism exercise",
+  "main": "matrix.js",
+  "author": "John Young",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "lint": "eslint './**/*.js'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^22.2.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2016
+    }
+  }
+}
