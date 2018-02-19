@@ -1,3 +1,5 @@
+/* eslint max-statements: 0 */
+
 var LinkedList = require('./linked-list');
 
 describe('LinkedList', function () {

@@ -1,0 +1,21 @@
+{
+  "name": "linked-list",
+  "version": "1.0.0",
+  "description": "'linked-list' Exercism exercise",
+  "main": "linked-list.js",
+  "author": "John Young",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "lint": "eslint './**/*.js'",
+      "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^22.3.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2016
+    }
+  }
+}
