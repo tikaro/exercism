@@ -10,28 +10,28 @@ describe('LinkedList', function () {
     expect(list.pop()).toBe(20);
     expect(list.pop()).toBe(10);
   });
-  it('push/shift', function () {
+  xit('push/shift', function () {
     var list = new LinkedList();
     list.push(10);
     list.push(20);
     expect(list.shift()).toBe(10);
     expect(list.shift()).toBe(20);
   });
-  it('unshift/shift', function () {
+  xit('unshift/shift', function () {
     var list = new LinkedList();
     list.unshift(10);
     list.unshift(20);
     expect(list.shift()).toBe(20);
     expect(list.shift()).toBe(10);
   });
-  it('unshift/pop', function () {
+  xit('unshift/pop', function () {
     var list = new LinkedList();
     list.unshift(10);
     list.unshift(20);
     expect(list.pop()).toBe(10);
     expect(list.pop()).toBe(20);
   });
-  it('example', function () {
+  xit('example', function () {
     var list = new LinkedList();
     list.push(10);
     list.push(20);
