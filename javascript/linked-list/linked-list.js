@@ -52,27 +52,4 @@ LinkedList.prototype.shift = function() {
   return value;
 };
 
-/* 'count' returns the length of the linked list */
-LinkedList.prototype.count = function() {
-  if (this.firstNode === null) {
-    return 0;
-  } else if (this.firstNode.nextNode === this.firstNode) {
-    return 1;
-  }
-  this.firstNode.nextNode = this.firstNode.nextNode.nextNode;
-  return this.count() + 1;
-};
-
-/* not yet sure what 'delete' does */
-LinkedList.prototype.delete = function(match) {
-  if (this.firstNode.nextNode === this.firstNode && this.firstNode.value === match) {
-    this.firstNode = null;
-  } else if (this.firstNode.nextNode.value === match) {
-    this.firstNode.nextNode = this.firstNode.nextNode.nextNode;
-  } else {
-    this.firstNode = this.firstNode.nextNode;
-    return this.delete(match);
-  }
-};
-
 module.exports = LinkedList;

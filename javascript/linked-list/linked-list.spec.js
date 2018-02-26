@@ -44,29 +44,4 @@ describe('LinkedList', function () {
     expect(list.pop()).toBe(50);
     expect(list.shift()).toBe(30);
   });
-  it('can count its elements', function () {
-    var list = new LinkedList();
-    expect(list.count()).toBe(0);
-    list.push(10);
-    expect(list.count()).toBe(1);
-    list.push(20);
-    expect(list.count()).toBe(2);
-  });
-  it('deletes the last element from the list', function () {
-    var list = new LinkedList();
-    list.push(10);
-    list.push(20);
-    list.push(30);
-    list.delete(20);
-    expect(list.count()).toBe(2);
-    expect(list.pop()).toBe(30);
-    expect(list.shift()).toBe(10);
-  });
-  it('deletes the only element', function () {
-    var list = new LinkedList();
-    list.push(10);
-    list.delete(10);
-
-    expect(list.count()).toBe(0);
-  });
 });
