@@ -12,7 +12,7 @@ var LinkedList = function() {
 
 // 'push' inserts the value at the back of the linked list
 LinkedList.prototype.push = function(value) {
-  if(this.firstNode === null) { 
+  if(this.firstNode === null) {
     this.firstNode = new Node(value)
   } else {
     var lastNode = this.firstNode.prevNode;
@@ -22,13 +22,44 @@ LinkedList.prototype.push = function(value) {
   }
 }
 
-// 'pop' removes the value at the back of the linked list
+// 'pop' removes the node at the back of the linked list
 LinkedList.prototype.pop = function() {
+  if(this.firstNode === null) {return null}
+  var oldLastNode = this.firstNode.prevNode;
+  var newLastNode = oldLastNode.prevNode;
+  this.firstNode.prevNode = newLastNode;
+  newLastNode.nextNode = this.firstNode;
+
+  return oldLastNode.value;
+}
+
+// 'shift' removes the value at the front of the linked list
+LinkedList.prototype.shift = function() {
+  if(this.firstNode === null) {return null}
+  var oldFirstNode = this.firstNode;
+  var newFirstNode = oldFirstNode.nextNode;
   var lastNode = this.firstNode.prevNode;
-  var secondToLastNode = lastNode.prevNode;
-  this.firstNode.prevNode = secondToLastNode;
-  secondToLastNode.nextNode = this.firstNode;
-  return lastNode.value;
+
+  this.firstNode = newFirstNode;
+  this.firstNode.prevNode = lastNode;
+  lastNode.nextNode = this.firstNode;
+
+  return oldFirstNode.value;
+}
+
+// 'unshift' inserts a value at the front of the linked list
+LinkedList.prototype.unshift = function(value) {
+  if(this.firstNode === null) {
+    this.firstNode = new Node(value);
+  } else {
+    var oldFirstNode = this.firstNode;
+    var lastNode = oldFirstNode.prevNode;
+    var newFirstNode = new Node(value, lastNode, oldFirstNode.nextNode);
+
+    oldFirstNode.prevNode = newFirstNode;
+    lastNode.nextNode = newFirstNode;
+    this.firstNode = newFirstNode;
+  }
 }
 
 module.exports = LinkedList;
