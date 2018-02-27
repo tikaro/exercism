@@ -10,19 +10,19 @@ var LinkedList = function() {
   this.firstNode = null;
 }
 
-/* "Push" inserts the value at the back of the linked list */
+// 'push' inserts the value at the back of the linked list
 LinkedList.prototype.push = function(value) {
-  if(this.firstNode === null) {
+  if(this.firstNode === null) { 
     this.firstNode = new Node(value)
   } else {
     var lastNode = this.firstNode.prevNode;
-    var newNode = new Node(value, lastNode, this.firstNode)
+    var newNode = new Node(value, lastNode, this.firstNode);
     lastNode.nextNode = newNode;
     this.firstNode.prevNode = newNode;
   }
 }
 
-/* 'pop' removes the value at the back of the linked list */
+// 'pop' removes the value at the back of the linked list
 LinkedList.prototype.pop = function() {
   var lastNode = this.firstNode.prevNode;
   var secondToLastNode = lastNode.prevNode;
