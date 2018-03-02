@@ -1,0 +1,15 @@
+{
+  "name": "pascals-triangle",
+  "version": "1.0.0",
+  "description": "Exercism exercise 'pascals-triangle'",
+  "main": "pascals-triangle.js",
+  "author": "John Young <john@tikaro.net>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^22.4.2"
+  }
+}
