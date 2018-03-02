@@ -5,7 +5,7 @@ describe('Triangle', function () {
     expect(new Triangle(1).rows).toEqual([[1]]);
   });
 
-  xit('with two rows', function () {
+  it('with two rows', function () {
     expect(new Triangle(2).rows).toEqual([[1], [1, 1]]);
   });
 
