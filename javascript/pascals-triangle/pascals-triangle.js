@@ -1,3 +1,4 @@
+/*
 var sumElements = function(element, index, array) {
   self.push(element + (array[index + 1] || 0));
 }
@@ -11,9 +12,17 @@ var generateRows = function(rowCount) {
   }
   return result;
 }
+*/
 
 var Triangle = function(rowCount) {
-  this.rows = generateRows(rowCount);
+  this.rowCount = rowCount;
+}
+
+Triangle.prototype.rows = function() {
+  var result = [[this.rowCount]];
+  console.log(`this.rowCount is ${this.rowCount}`);
+  console.log(`result is ${result}`);
+  return result;
 }
 
 module.exports = Triangle;

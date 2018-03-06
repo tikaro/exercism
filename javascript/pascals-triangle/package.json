@@ -13,5 +13,10 @@
   "dependencies": {
     "eslint": "^4.18.1",
     "jest": "^22.4.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2016
+    }
   }
 }
