@@ -1,6 +1,11 @@
 {
   "name": "two-fer",
-  "jest": {
-    "verbose": false
+  "version": "1.0.0",
+  "description": "two-fer javascript exercise",
+  "main": "two-fer.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jasmine spec ./*.spec.js",
+    "lint": "eslint \"*.js\""
   }
 }
