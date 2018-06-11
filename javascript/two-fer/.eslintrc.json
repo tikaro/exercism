@@ -1,0 +1,12 @@
+{
+  "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jasmine": true
+  },
+  "extends": "thinkcompany",
+  "parserOptions": {
+      "sourceType": "module"
+  }
+}
