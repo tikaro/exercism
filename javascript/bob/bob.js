@@ -1,28 +1,29 @@
-'use strict'
+var Bob = function() {};
 
-var Bob = function() {
+Bob.prototype.hey = function(statement) {
+  statement = statement.replace(/[\s]+$/g, '');
+
+  if (this.isShouting(statement)) {
+    return "Whoa, chill out!";
+  }
+  if (this.isAsking(statement)) {
+    return "Sure.";
+  }
+  if (this.isSilence(statement)) {
+    return "Fine. Be that way!";
+  }
+  return "Whatever."
 }
 
-Bob.prototype.hey = function(input) {
-  input = input.replace(/[\s]+$/g, ''); //Eliminate whitespace
-
-  var response = "Whatever.";
-  if(this.isAsking(input)) { response = "Sure." }
-  if(this.isShouting(input)) { response = "Whoa, chill out!" }
-  if(this.isSilence(input)) { response = "Fine. Be that way!" }
-  return response;
+Bob.prototype.isShouting = function(statement) {
+  return /[A-Z]/.test(statement) && statement.toUpperCase() === statement;
 }
 
-Bob.prototype.isAsking = function(input) {
-  return input[input.length-1] === '?';
+Bob.prototype.isAsking = function(statement) {
+  return /\?$/.test(statement)
 }
 
-Bob.prototype.isShouting = function(input) {
-  return /[A-Z]/.test(input) && input.toUpperCase() === input;
+Bob.prototype.isSilence = function(statement) {
+  return statement.length === 0;
 }
-
-Bob.prototype.isSilence = function(input) {
-  return input.length === 0;
-}
-
 module.exports = Bob;

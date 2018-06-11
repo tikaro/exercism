@@ -43,7 +43,7 @@ describe('Bob responds properly to...', function () {
     expect(result).toEqual('Whatever.');
   });
 
-  it('a forceful question', function () {
+  it('a forceful statement', function () {
     var result = bob.hey('WHAT THE HELL WERE YOU THINKING?');
     expect(result).toEqual('Whoa, chill out!');
   });
@@ -53,12 +53,12 @@ describe('Bob responds properly to...', function () {
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  it('a question that is only numbers', function () {
+  it('a statement that is only numbers', function () {
     var result = bob.hey('1, 2, 3');
     expect(result).toEqual('Whatever.');
   });
 
-  it('a question with only one number', function () {
+    it('a question with only one number', function () {
     var result = bob.hey('4?');
     expect(result).toEqual('Sure.');
   });
