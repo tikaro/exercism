@@ -1,11 +1,6 @@
-var Gigasecond = function(dateOfBirth) {
-  this.dateOfBirth = dateOfBirth;
-};
-  
-Gigasecond.prototype.date = function() {
-  var timeOfBirth = this.dateOfBirth.getTime();
-  var anniversaryDate = new Date(timeOfBirth + 1000000000000);
+export const gigasecond = (date) => {
+  const birthDate = date;
+  const anniversaryDate = new Date(birthDate.getTime() + 1e12);
+
   return anniversaryDate;
 };
-
-module.exports = Gigasecond;
