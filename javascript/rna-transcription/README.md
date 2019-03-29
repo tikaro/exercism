@@ -1,4 +1,4 @@
-# Rna Transcription
+# RNA Transcription
 
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
@@ -20,30 +20,36 @@ each nucleotide with its complement:
 
 ## Setup
 
-Go through the setup instructions for JavaScript to
+Go through the setup instructions for Javascript to
 install the necessary dependencies:
 
-http://exercism.io/languages/javascript
+[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
 
-## Making the Test Suite Pass
+## Requirements
+
+Install assignment dependencies:
+
+```bash
+$ npm install
+```
+
+## Making the test suite pass
 
 Execute the tests with:
 
-    jasmine <exercise-name>.spec.js
+```bash
+$ npm test
+```
 
-Replace `<exercise-name>` with the name of the current exercise. E.g., to
-test the Hello World exercise:
+In the test suites all tests but the first have been skipped.
 
-    jasmine hello-world.spec.js
+Once you get a test passing, you can enable the next one by
+changing `xtest` to `test`.
 
-In many test suites all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by
-changing `xit` to `it`.
 
 ## Source
 
-Rosalind [http://rosalind.info/problems/rna](http://rosalind.info/problems/rna)
+Hyperphysics [http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
