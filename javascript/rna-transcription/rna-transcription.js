@@ -1,13 +1,12 @@
-export const toRna = (nucleotide) => {
+const rnaMap = {
+  G: 'C',
+  C: 'G',
+  T: 'A',
+  A: 'U'
+};
 
-  const nucleotideMap = {
-    'C': 'G',
-    'G': 'C',
-    'T': 'A',
-    'A': 'U'
-  }
-
-  return nucleotide.split('')
-    .map(nucleotide => nucleotideMap[nucleotide])
-    .join('')
-}
+export const toRna = function(dna){
+  return dna.replace(/[GCTA]/g, l => {
+    return rnaMap[l];
+  });
+};
