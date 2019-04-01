@@ -6,12 +6,10 @@ export const at = (hour = 0, minute = 0) => {
   let h = startTime.getHours().toString();
   let m = startTime.getMinutes().toString();
 
-  return `${leftPad(h)}:${leftPad(m)}`
-};
-
-function leftPad(number) {
-  if (number.length < 2) {
-    number = '0' + number;
+  return {
+    h: () => h,
+    m: () => m,
+    toString: () => `${h.padStart(2,'0')}:${m.padStart(2,'0')}`,
+    equals: (clock) => ((h == clock.h()) && (m == clock.m()))
   }
-  return number;
 }
