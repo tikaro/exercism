@@ -1,10 +1,10 @@
 export const at = (hour = 0, minute = 0) => {
-  let startTime = new Date()
 
-  startTime.setHours(hour, minute)
+  let clockTime = new Date()
+  clockTime.setHours(hour, minute)
 
-  let h = startTime.getHours().toString();
-  let m = startTime.getMinutes().toString();
+  let h = clockTime.getHours().toString();
+  let m = clockTime.getMinutes().toString();
 
   return {
     h: () => h,
