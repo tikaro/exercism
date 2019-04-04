@@ -10,6 +10,8 @@ export const at = (hour = 0, minute = 0) => {
     h: () => h,
     m: () => m,
     toString: () => `${h.padStart(2,'0')}:${m.padStart(2,'0')}`,
-    equals: (clock) => ((h == clock.h()) && (m == clock.m()))
+    equals: (clock) => ((h == clock.h()) && (m == clock.m())),
+    minus: minutes => at(h,+m - +minutes),
+    plus: minutes => at(h,+m + +minutes),
   }
 }
