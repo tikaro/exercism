@@ -6,62 +6,62 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('shouting', () => {
+  test('shouting', () => {
     const result = hey('WATCH OUT!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('shouting gibberish', () => {
+  test('shouting gibberish', () => {
     const result = hey('FCECDFCAAB');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('asking a question', () => {
+  test('asking a question', () => {
     const result = hey('Does this cryogenic chamber make me look fat?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('asking a numeric question', () => {
+  test('asking a numeric question', () => {
     const result = hey('You are, what, like 15?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('asking gibberish', () => {
+  test('asking gibberish', () => {
     const result = hey('fffbbcbeab?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('talking forcefully', () => {
+  test('talking forcefully', () => {
     const result = hey("Let's go make out behind the gym!");
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('using acronyms in regular speech', () => {
+  test('using acronyms in regular speech', () => {
     const result = hey("It's OK if you don't want to go to the DMV.");
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('forceful question', () => {
+  test('forceful question', () => {
     const result = hey('WHAT THE HELL WERE YOU THINKING?');
     expect(result).toEqual('Calm down, I know what I\'m doing!');
   });
 
-  xtest('shouting numbers', () => {
+  test('shouting numbers', () => {
     const result = hey('1, 2, 3 GO!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('only numbers', () => {
+  test('only numbers', () => {
     const result = hey('1, 2, 3');
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('question with only numbers', () => {
+  test('question with only numbers', () => {
     const result = hey('4?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('shouting with special characters', () => {
+  test('shouting with special characters', () => {
     const result = hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!');
     expect(result).toEqual('Whoa, chill out!');
   });
@@ -86,22 +86,22 @@ describe('Bob', () => {
     expect(result).toEqual('Sure.');
   });
 
-  xtest('silence', () => {
+  test('silence', () => {
     const result = hey('');
     expect(result).toEqual('Fine. Be that way!');
   });
 
-  xtest('prolonged silence', () => {
+  test('prolonged silence', () => {
     const result = hey('          ');
     expect(result).toEqual('Fine. Be that way!');
   });
 
-  xtest('alternate silence', () => {
+  test('alternate silence', () => {
     const result = hey('\t\t\t\t\t\t\t\t\t\t');
     expect(result).toEqual('Fine. Be that way!');
   });
 
-  xtest('multiple line question', () => {
+  test('multiple line question', () => {
     const result = hey('\nDoes this cryogenic chamber make me look fat?\nno');
     expect(result).toEqual('Whatever.');
   });
