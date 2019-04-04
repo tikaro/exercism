@@ -66,22 +66,22 @@ describe('Bob', () => {
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('shouting with no exclamation mark', () => {
+  test('shouting with no exclamation mark', () => {
     const result = hey('I HATE YOU');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xtest('statement containing question mark', () => {
+  test('statement containing question mark', () => {
     const result = hey('Ending with a ? means a question.');
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('non-letters with question', () => {
+  test('non-letters with question', () => {
     const result = hey(':) ?');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('prattling on', () => {
+  test('prattling on', () => {
     const result = hey('Wait! Hang on. Are you going to be OK?');
     expect(result).toEqual('Sure.');
   });
@@ -106,22 +106,22 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('starting with whitespace', () => {
+  test('starting with whitespace', () => {
     const result = hey('         hmmmmmmm...');
     expect(result).toEqual('Whatever.');
   });
 
-  xtest('ending with whitespace', () => {
+  test('ending with whitespace', () => {
     const result = hey('Okay if like my  spacebar  quite a bit?   ');
     expect(result).toEqual('Sure.');
   });
 
-  xtest('other whitespace', () => {
+  test('other whitespace', () => {
     const result = hey('\n\r \t');
     expect(result).toEqual('Fine. Be that way!');
   });
 
-  xtest('non-question ending with whitespace', () => {
+  test('non-question ending with whitespace', () => {
     const result = hey('This is a statement ending with whitespace      ');
     expect(result).toEqual('Whatever.');
   });
