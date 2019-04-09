@@ -1,7 +1,7 @@
 import { meetupDay } from './meetup';
 
 describe('meetupDay()', () => {
-  test('test monteenth of may 2013', () => {
+  xtest('test monteenth of may 2013', () => {
     expect(meetupDay(2013, 4, 'Monday', 'teenth')).toEqual(new Date(2013, 4, 13));
   });
 
@@ -9,7 +9,7 @@ describe('meetupDay()', () => {
     expect(meetupDay(2013, 1, 'Saturday', 'teenth')).toEqual(new Date(2013, 1, 16));
   });
 
-  xtest('test first tuesday of may 2013', () => {
+  test('test first tuesday of may 2013', () => {
     expect(meetupDay(2013, 4, 'Tuesday', '1st')).toEqual(new Date(2013, 4, 7));
   });
 
@@ -41,7 +41,7 @@ describe('meetupDay()', () => {
     expect(meetupDay(2015, 1, 'Sunday', 'last')).toEqual(new Date(2015, 1, 22));
   });
 
-  xtest('test first friday of december 2012', () => {
+  test('test first friday of december 2012', () => {
     expect(meetupDay(2012, 11, 'Friday', '1st')).toEqual(new Date(2012, 11, 7));
   });
 
