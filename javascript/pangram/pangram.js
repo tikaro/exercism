@@ -1,14 +1,16 @@
-'use strict';
+'use strict'
 
-var Pangram = function(phrase) {
-  this.phrase = phrase.toLowerCase();
+var Pangram = function(input) {
+  this.input = input.toLowerCase();
 }
 
 Pangram.prototype.isPangram = function() {
   var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-  for( var i=0; i < alphabet.length; i++ ) {
-    if( !this.phrase.match(alphabet[i]) ) {
+  for( var i = 0; i <= alphabet.length; i++ ) {
+    if( !this.input.match( alphabet[i] ) ) {
+      // this letter of the alphabet was not found.
+      // it's not a pangram!
       return false;
     }
   }
