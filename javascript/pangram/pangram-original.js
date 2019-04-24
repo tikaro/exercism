@@ -1,18 +1,11 @@
-'use strict'
+export const isPangram = (input = '') => {
+  const theAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  const sentence = input.toLowerCase()
 
-var Pangram = function(input) {
-  this.input = input.toLowerCase();
-}
-
-Pangram.prototype.isPangram = function() {
-  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-
-  for( var i = 0; i <= alphabet.length; i++ ) {
-    if( !this.input.match( alphabet[i] ) ) {
+  for( var i = 0; i <= theAlphabet.length; i++ ) {
+    if( !sentence.match( theAlphabet[i] ) ) {
       return false;
     }
   }
   return true;
 }
-
-module.exports = Pangram;
