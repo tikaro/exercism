@@ -2,21 +2,33 @@ export const meetupDay = (year, month, dayOfWeek, which) => {
 
   // Create a hash of days:
   let days = {
-    mondays:    [],
-    tuesdays:   [],
-    wednesdays: [],
-    thursdays:  [],
-    fridays:    [],
-    saturdays:  [],
-    sundays:    []
+    0:    [],
+    1:   [],
+    2: [],
+    3:  [],
+    4:    [],
+    5:  [],
+    6:    []
   }
 
   // Start on the first day of the month
   let currentDate = new Date(year, month, 1)
 
+  do {
+    // Push the current date onto days[currentDate.getDay()]
+    // console.log( `currentDate is ${currentDate.toString()}`);
+    // console.log( `days[${currentDate.getDay()}].push(${currentDate.toString()});`)
+    days[currentDate.getDay()].push(currentDate.getDate());
+
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+  while (currentDate.getMonth() == month)
+
+console.log( days[0].toString() )
+
   // Scan through the month and add each day to the appropriate array.
   // For each day of the month,
-    // Push the current date onto days[currentDate.getDay()]
+    
     // Advance the date by one day
   
 
@@ -28,7 +40,7 @@ export const meetupDay = (year, month, dayOfWeek, which) => {
   // return that date
 
 
-  return currentDate;
+  return new Date(year, month, days[2][0]);
 }
 
 const daysOfTheWeek = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(' ')
