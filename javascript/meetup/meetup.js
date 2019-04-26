@@ -14,10 +14,10 @@ export const meetupDay = (  desiredYear, desiredMonth, desiredDayOfWeek, descrip
     Saturday: []
   }
 
-  // Start on the first day of the month
+  // Starting on the first day of the month,
+  // Populate the days hash with all the days.
   let currentDate = new Date( desiredYear, desiredMonth, 1)
 
-  //make a two-dimensional array of dates.
   do {
     var currentWeekdayNumber = currentDate.getDay();
     var currentWeekdayName = getWeekdayName(currentWeekdayNumber);
@@ -27,26 +27,30 @@ export const meetupDay = (  desiredYear, desiredMonth, desiredDayOfWeek, descrip
   }
   while (currentDate.getMonth() == desiredMonth)
 
-  // get an array of just the desired day of the week
+  // Get an array of Mondays
   var candidateDates = days[desiredDayOfWeek]
+  var candidateDay = ''
 
-  if( descriptor == 'teenth' ) {
-    candidateDates = candidateDates.filter(candidateDate => candidateDate > 12 )
-    return new Date(  desiredYear, desiredMonth, candidateDates[0]);
-  }
-
-  if( descriptor == 'last' ) {
-    return new Date(  desiredYear, desiredMonth, candidateDates.pop());
-  }
-
-  // if there's no 5th weekday
+  // if there's no 5th Monday in February, return an error
   if ( ORDINALS.indexOf(descriptor) > (candidateDates.length - 1 )) {
     throw new Error('');
   }
 
-  //return an ordinal date
-    const theDate = new Date(  desiredYear, desiredMonth, candidateDates[ORDINALS.indexOf(descriptor)]);
-    return theDate
+  // Use the descriptor to decide the day of the month
+  switch (descriptor) {
+    case 'teenth':
+      candidateDay = candidateDates.filter(candidateDate => candidateDate > 12 )[0];
+      break;
+    case 'last':
+      candidateDay = candidateDates.pop();
+      break;
+    default:
+      var nth = ORDINALS.indexOf(descriptor);
+      candidateDay = candidateDates[nth];
+  }
+
+  // return the date we've decided on
+  return new Date(  desiredYear, desiredMonth, candidateDay );
 }
 
 function getWeekdayName(dayNumber) {
