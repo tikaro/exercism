@@ -1,53 +1,54 @@
-import { arrayExpression } from "@babel/types";
+const ORDINALS = "1st 2nd 3rd 4th 5th".split(' ');
+const DAYNAMES = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(' ');
 
-export const meetupDay = (year, month, dayOfWeek, which) => {
+export const meetupDay = (  desiredYear, desiredMonth, desiredDayOfWeek, descriptor) => {
 
   // Create a hash of days:
   let days = {
-    0: [],
-    1: [],
-    2: [],
-    3: [],
-    4: [],
-    5: [],
-    6: []
+    Sunday: [],
+    Monday: [],
+    Tuesday: [],
+    Wednesday: [],
+    Thursday: [],
+    Friday: [],
+    Saturday: []
   }
 
   // Start on the first day of the month
-  let currentDate = new Date(year, month, 1)
+  let currentDate = new Date( desiredYear, desiredMonth, 1)
 
   //make a two-dimensional array of dates.
   do {
-    days[currentDate.getDay()].push(currentDate.getDate());
+    var currentWeekdayNumber = currentDate.getDay();
+    var currentWeekdayName = getWeekdayName(currentWeekdayNumber);
+    days[currentWeekdayName].push(currentDate.getDate());
 
     currentDate.setDate(currentDate.getDate() + 1);
   }
-  while (currentDate.getMonth() == month)
+  while (currentDate.getMonth() == desiredMonth)
 
-  // get an array of just Thursdays, or just Fridays
-  var candidateDates = days[DAYNAMES.indexOf(dayOfWeek)]
+  // get an array of just the desired day of the week
+  var candidateDates = days[desiredDayOfWeek]
 
-  if( which == 'teenth' ) {
-    // return the first date over 12
+  if( descriptor == 'teenth' ) {
     candidateDates = candidateDates.filter(candidateDate => candidateDate > 12 )
-    return new Date(year, month, candidateDates[0]);
+    return new Date(  desiredYear, desiredMonth, candidateDates[0]);
   }
 
-  if( which == 'last' ) {
-    // return the last weekdate
-    return new Date(year, month, candidateDates.pop());
+  if( descriptor == 'last' ) {
+    return new Date(  desiredYear, desiredMonth, candidateDates.pop());
   }
 
-  // if there's no 5th
-  if ( ORDINALS.indexOf(which) > (candidateDates.length - 1 )) {
-    console.log('uh-oh, too long')
+  // if there's no 5th weekday
+  if ( ORDINALS.indexOf(descriptor) > (candidateDates.length - 1 )) {
     throw new Error('');
   }
 
   //return an ordinal date
-    const theDate = new Date(year, month, candidateDates[ORDINALS.indexOf(which)]);
+    const theDate = new Date(  desiredYear, desiredMonth, candidateDates[ORDINALS.indexOf(descriptor)]);
     return theDate
 }
 
-const ORDINALS = "1st 2nd 3rd 4th 5th".split(' ');
-const DAYNAMES = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(' ');
+function getWeekdayName(dayNumber) {
+  return DAYNAMES[dayNumber];
+}
