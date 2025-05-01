@@ -35,6 +35,28 @@ public static class Identifier
         }
         identifier = result.ToString();
         result.Clear();
+
+        // omit non-ASCII characters
+        foreach (char c in identifier)
+        {
+            if (c <= 127) // ASCII range check
+            {
+                result.Append(c);
+            }
+        }
+        identifier = result.ToString();
+        result.Clear();
+
+        // omit digits
+        foreach (char c in identifier)
+        {
+            if (!char.IsDigit(c)) // number check
+            {
+                result.Append(c);
+            }
+        }
+        identifier = result.ToString();
+        result.Clear();
         
         return identifier;    }
 }
