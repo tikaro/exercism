@@ -2,9 +2,6 @@ public static class Identifier
 {
     public static string Clean(string identifier)
     {
-        // replace spaces with underscores
-        identifier = identifier.Replace(" ","_");
-
         var result = new System.Text.StringBuilder();
 
         // replace control characters with "CTRL"
@@ -36,10 +33,10 @@ public static class Identifier
         identifier = result.ToString();
         result.Clear();
 
-        // omit non-ASCII characters
+        // omit non-ASCII characters but keep spaces
         foreach (char c in identifier)
         {
-            if (c <= 127) // ASCII range check
+            if (char.IsLetter(c) || char.IsWhiteSpace(c)) // ASCII range check
             {
                 result.Append(c);
             }
@@ -57,6 +54,20 @@ public static class Identifier
         }
         identifier = result.ToString();
         result.Clear();
-        
-        return identifier;    }
+
+        // omit lowercase greek letters
+        foreach (char c in identifier) 
+        {
+            if (c < 'α' || c > 'ω') {
+                result.Append(c);
+            }
+        }
+        identifier = result.ToString();
+        result.Clear();
+
+        // replace spaces with underscores
+        identifier = identifier.Replace(" ","_");
+
+        return identifier;
+    }
 }
