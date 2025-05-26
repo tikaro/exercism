@@ -1,15 +1,14 @@
 static class SavingsAccount
 {
-        private const float PenaltyInterestRate = 3.213f;
-        private const float GoodInterestRate = 0.5f;
-        private const float BetterInterestRate = 1.621f;
-        private const float BestInterestRate = 2.475f;
     public static float InterestRate(decimal balance)
     {
-        if (balance < 0) { return PenaltyInterestRate; }
-        else if (balance < 1000) { return GoodInterestRate; }
-        else if (balance < 5000) { return BetterInterestRate;}
-        else { return BestInterestRate; }
+        return balance switch
+        {
+            < 0 => 3.213f,
+            < 1_000 => 0.5f,
+            < 5_000 => 1.621f,
+            _ => 2.475f
+        };
     }
 
     public static decimal Interest(decimal balance)
