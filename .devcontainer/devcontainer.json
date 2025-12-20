@@ -24,7 +24,12 @@
 	// }
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "dotnet restore",
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y lolcat && dotnet restore",
+
+	// Add /usr/games to PATH for lolcat and other game utilities
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:/usr/games"
+	},
 
 	// Configure tool-specific properties.
 	"customizations": {
