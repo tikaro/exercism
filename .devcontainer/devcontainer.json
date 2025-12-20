@@ -24,7 +24,7 @@
 	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y lolcat && dotnet restore",
 
 	// Add /usr/games to PATH for lolcat and other game utilities
-	"rem
+	"remoteEnv": {
 		"PATH": "${containerEnv:PATH}:/usr/games"
 	},
 
