@@ -29,7 +29,8 @@
 		"sudo apt-get install -y lolcat",
 		"dotnet restore",
 		"mkdir ~/.ssh && chmod 700 ~/.ssh",
-		"exercism configure --token=$EXERCISM_TOKEN"
+		"exercism configure --token=$EXERCISM_TOKEN",
+		"exercism configure --workspace=/workspaces/exercism"
 	],
 
 	// Add /usr/games to PATH for lolcat and other game utilities
