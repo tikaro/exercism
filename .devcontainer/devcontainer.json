@@ -24,7 +24,13 @@
 	// }
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y lolcat && dotnet restore && mkdir ~/.ssh && chmod 700 ~/.ssh",
+	"postCreateCommand": [
+		"sudo apt-get update",
+		"sudo apt-get install -y lolcat",
+		"dotnet restore",
+		"mkdir ~/.ssh && chmod 700 ~/.ssh",
+		"exercism configure --token=$EXERCISM_TOKEN"
+	],
 
 	// Add /usr/games to PATH for lolcat and other game utilities
 	"remoteEnv": {
