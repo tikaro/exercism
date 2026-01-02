@@ -13,7 +13,7 @@ public static class LogAnalysis
         return middle;
     }
     
-    public static string Message(this string str) => str.Split("]: ")[1];
+    public static string Message(this string str) => str.SubstringAfter("]: ");
 
     public static string LogLevel(this string str) => str.SubstringBetween("[", "]");
 }
