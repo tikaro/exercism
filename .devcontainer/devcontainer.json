@@ -4,14 +4,15 @@
 	"name": "C# (.NET)",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": { "dockerfile": "Dockerfile" },
-	"features": {
+	"features": {                                                                            
 		"ghcr.io/devcontainers/features/azure-cli:1": {
-		"version": "latest"
+			"version": "latest"                                                             
 		},
 		"ghcr.io/devcontainers/features/sshd:1": {
-		"version": "latest"
+			"version": "latest"                                                              
 		},
-    	"ghcr.io/devcontainers-extra/features/exercism-cli:1": {}
+		"ghcr.io/devcontainers-extra/features/exercism-cli:1": {},                           
+		"ghcr.io/devcontainers/features/node:1": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

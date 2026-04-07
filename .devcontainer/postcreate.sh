@@ -9,5 +9,7 @@ dotnet restore
 
 mkdir ~/.ssh && chmod 700 ~/.ssh
 
+npm install -g @anthropic-ai/claude-code
+
 exercism configure --token=$EXERCISM_TOKEN
 exercism configure --workspace=/workspaces/exercism
